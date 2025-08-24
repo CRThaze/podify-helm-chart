@@ -22,11 +22,11 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      # - name: Run chart-releaser
-      #   uses: bitdeps/helm-oci-charts-releaser@v0.1.3
-      #   with:
-      #     charts_dir: charts
-      #     oci_registry: ghcr.io/CRThaze
-      #     oci_username: CRThaze
-      #     oci_password: ${{ secrets.GITHUB_TOKEN }}
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run chart-releaser
+        uses: bitdeps/helm-oci-charts-releaser@v0.1.3
+        with:
+          charts_dir: charts
+          oci_registry: ghcr.io/crthaze
+          oci_username: CRThaze
+          oci_password: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
